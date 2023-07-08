@@ -1,4 +1,5 @@
 //convert decimal into binary using bitwise operator
+//int range-> [-2^31 to 2^31-1]
 
 #include <iostream>
 #include <math.h>
