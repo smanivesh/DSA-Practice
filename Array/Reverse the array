@@ -1,0 +1,17 @@
+//Reverse the array
+//https://www.codingninjas.com/studio/problems/reverse-the-array_1262298?leftPanelTab=0
+
+void reverseArray(vector<int> &arr , int m)
+{
+	int a= m+1;
+	int l= arr.size()-1;
+
+	for(int i=a; i<=l; i++)
+	{
+		int ele= arr[a];
+		arr[a]=arr[l];
+		arr[l]= ele;
+		l--;
+		a++;
+	}
+}
