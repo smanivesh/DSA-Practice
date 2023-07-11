@@ -1,0 +1,40 @@
+//Merge Strings Alternately
+//https://leetcode.com/problems/merge-strings-alternately/description/?envType=study-plan-v2&envId=leetcode-75
+
+class Solution {
+public:
+    string mergeAlternately(string word1, string word2) {
+        int l1= word1.size();
+        int l2= word2.size();
+        int t;
+
+        if(l1>=l2)
+        {
+            //l2 is small
+            t=l2;
+            
+        }
+        else t=l1;
+
+        string ans="";
+        for(int i=0; i<t; i++)
+        {
+            ans= ans+word1[i]+word2[i];
+        }
+        if(l1>=l2)
+        {
+            for(int i=t;i<l1; i++)
+            {
+                ans= ans+word1[i];
+            }
+        }
+        else{
+            for(int i=t;i<l2; i++)
+            {
+                ans= ans+word2[i];
+            }
+        }
+
+        return ans;
+    }
+};
