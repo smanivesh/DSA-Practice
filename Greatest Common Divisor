@@ -1,0 +1,25 @@
+//Find Gcd- Greatest common divisor
+//n1= 42  1,2,3,6,7,14,21
+//n2= 28  1,2,4,7,14
+//gcd= 14
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    
+    int n1, n2;
+    cin>>n1>>n2;
+    
+    int gcd;
+    for(int i=1; i<=n1 && i<=n2; i++)
+    {
+        if(n1%i==0 && n2%i==0)
+        {
+            gcd= i;
+        }
+    }
+    
+	cout<<"Greatest common divisor of "<<n1<< "and" <<n2<<"are: "<<gcd;
+	return 0;
+}
