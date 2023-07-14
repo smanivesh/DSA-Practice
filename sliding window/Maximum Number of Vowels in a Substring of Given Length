@@ -1,0 +1,40 @@
+//Maximum Number of Vowels in a Substring of Given Length
+//https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/description/?envType=study-plan-v2&envId=leetcode-75
+
+class Solution {
+public:
+
+    bool checkVowel(char ch){
+        if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u'){
+            return true;
+        }
+        return false;
+    }
+
+    int maxVowels(string s, int k) {
+        int count=0;
+        // string st;
+        for(int i=0;i<k; i++)
+        {
+            // st= st+s[i];
+            if(checkVowel(s[i])== true){
+                count++;
+            }
+        }
+        int i=0, j=k;
+        int tempCount= count;
+        while(j<s.length())
+        {
+            if(checkVowel(s[j])==true){
+                tempCount+=1;
+            }
+            if(checkVowel(s[i])==true){
+                tempCount-= 1;
+            }
+            count= max(count,tempCount );
+            i++;
+            j++;
+        }
+        return count;
+    }
+};
