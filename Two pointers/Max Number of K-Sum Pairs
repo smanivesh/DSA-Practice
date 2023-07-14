@@ -1,0 +1,26 @@
+//Max Number of K-Sum Pairs
+//https://leetcode.com/problems/max-number-of-k-sum-pairs/description/?envType=study-plan-v2&envId=leetcode-75
+
+class Solution {
+public:
+    int maxOperations(vector<int>& nums, int k) {
+        int arr_size=nums.size();
+        vector<bool> visited_idx(arr_size,false);
+        sort(nums.begin(),nums.end());    //sort nums array
+        int str=0,end=arr_size-1,cnt=0;
+        while(str<end){              //2 Pointer approach 
+            if(visited_idx[str]==false && visited_idx[end]==false && nums[str]+nums[end]==k){
+                cnt++;                                      //check if both values not visited and equal  
+                visited_idx[str]==true;             //to k then increament cnt
+                visited_idx[end]==true;
+                str++;
+                end--;
+            }
+            else if(nums[str]+nums[end]>k)
+                end--;
+            else
+                str++;
+        }
+        return cnt;
+    }
+};
