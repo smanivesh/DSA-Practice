@@ -1,0 +1,20 @@
+//Contains Duplicate
+//https://leetcode.com/problems/contains-duplicate/description/
+
+class Solution {
+public:
+    bool containsDuplicate(vector<int>& nums) {
+        unordered_map<int, int> map;
+        for(auto x: nums)
+        {
+            map[x]++;
+        }
+        for(auto x: map)
+        {
+            if(x.second>1){
+                return true;
+            }
+        }
+        return false;
+    }
+};
